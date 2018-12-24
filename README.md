@@ -1,5 +1,6 @@
 # qml-date-tumblers
-QML horizontal date and time tumblers, with keyboard support
+QML horizontal date and time tumblers.
+Supports using the keyboard to select, abort, and submit, with a keyboard focus indicator.
 
 ## Usage
 
