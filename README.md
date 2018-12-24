@@ -136,3 +136,4 @@ MinutePicker {
 	}
 }
 ```
+![Screenshot of example](screenshot.png)
