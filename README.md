@@ -1,22 +1,22 @@
 # qml-date-tumblers
-QML horizontal date and time tumblers.
+QML horizontal date and time tumblers.  
 Supports using the keyboard to select, abort, and submit, with a keyboard focus indicator.
 
 ## Usage
 
 ### Common to All
 #### Properties
-indicatorColor - The color of the keyboard active focus indicator
+indicatorColor - The color of the keyboard active focus indicator  
 indicatorHeight - The vertical thickness of the keyboard active focus indicator
 #### Signals
-onSubmit - Emitted if the user presses return on their keyboard
+onSubmit - Emitted if the user presses return on their keyboard  
 onAbort - Emitted if the user presses Esc on their keyboard
 
 ### YearPicker
 #### Properties
-startYear - The first year to list
-endYear - The end year to list
-year - The currently selected year. This can be set externally.
+startYear - The first year to list  
+endYear - The end year to list  
+year - The currently selected year. This can be set externally.  
 
 ### MonthPicker
 #### Properties
@@ -24,7 +24,7 @@ month - The currently selected month. This can be set externally.
 
 ### DayPicker
 #### Properties
-daysInMonth - The number of days to show.
+daysInMonth - The number of days to show.  
 day - The currently selected month. This can be set externally.
 
 ### HourPicker
@@ -33,7 +33,7 @@ hour - The currently selected hour. This can be set externally.
 
 ### MinutePicker
 #### Properties
-minute - The currently selected minute. This can be set externally.
+minute - The currently selected minute. This can be set externally.  
 divisions - How many options to divide the hour into. Should be a factor of 60, e.g. 1, 2, 5, 6, 10...
 
 ## Example
