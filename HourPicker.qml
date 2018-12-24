@@ -11,7 +11,7 @@ Rectangle {
 
 	property int indicatorHeight: 2
 	property string indicatorColor: "#e91e63"
- property int hour
+	property int hour
 	property string textEntered
 
 	signal submit()
@@ -19,8 +19,8 @@ Rectangle {
 
 	activeFocusOnTab: true
 
- Tumbler {
-  id: hourPickerTumbler
+	Tumbler {
+		id: hourPickerTumbler
 		height: parent.width
 		width: parent.height - parent.indicatorHeight
 		activeFocusOnTab: false
@@ -29,25 +29,25 @@ Rectangle {
 			origin.x: hourPickerTumbler.width / 2
 			origin.y: hourPickerTumbler.width / 2
 		}
-  model: 24
-  delegate: Text {
+		model: 24
+		delegate: Text {
 			transform: Rotation {
 				angle: 90
 				origin.x: width / 2
 				origin.y: width / 2
 			}
-   anchors.right: parent.horizontalCenter
-   text: modelData
-   opacity: 0.4 + Math.max(0, 1 - Math.abs(Tumbler.displacement)) * 0.6
-   font.pixelSize: 15 + Math.max(0, 1 - Math.abs(Tumbler.displacement)) * 3
-  }
+			anchors.right: parent.horizontalCenter
+			text: modelData
+			opacity: 0.4 + Math.max(0, 1 - Math.abs(Tumbler.displacement)) * 0.6
+			font.pixelSize: 15 + Math.max(0, 1 - Math.abs(Tumbler.displacement)) * 3
+		}
 		onCurrentIndexChanged: {
 			var h = hourPickerTumbler.currentIndex
-		 if (hourPicker.hour != h) {
+			if (hourPicker.hour != h) {
 				hourPicker.hour = h
 			}
 		}
- }
+	}
 
 	Rectangle	{
 		id: hourPickerIndicator
@@ -92,7 +92,7 @@ Rectangle {
 		else if (hourPicker.textEntered.length > t.length) {
 			hourPicker.textEntered = ""
 			return searchIndex(t)
-  }
+		}
 	}
 
 	// return Index of the first item that contains the given string.

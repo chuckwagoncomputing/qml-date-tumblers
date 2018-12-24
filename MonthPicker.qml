@@ -11,7 +11,7 @@ Rectangle {
 
 	property int indicatorHeight: 2
 	property string indicatorColor: "#e91e63"
- property int month
+	property int month
 	property string textEntered
 
 	signal submit()
@@ -95,7 +95,7 @@ Rectangle {
 		}
 		onCurrentIndexChanged: {
 			var m = monthPickerTumbler.currentIndex
-		 if (monthPicker.month != m) {
+			if (monthPicker.month != m) {
 				monthPicker.month = m
 			}
 		}
@@ -143,19 +143,19 @@ Rectangle {
 		else if (monthPicker.textEntered.length > t.length) {
 			monthPicker.textEntered = ""
 			return searchIndex(t)
-  }
+		}
 	}
 
 	// return Index of the first item that contains the given string.
 	function findIndex(t) {
 		for (var i = 0; i < monthModel.count; i++) {
-   if (monthModel.get(i).month.toLowerCase().startsWith(monthPicker.textEntered.toLowerCase())) {
+			if (monthModel.get(i).month.toLowerCase().startsWith(monthPicker.textEntered.toLowerCase())) {
 				return i
 			}
 			else if (parseInt(monthPicker.textEntered) > 0 && parseInt(monthPicker.textEntered) < 13) {
 				return parseInt(monthPicker.textEntered) - 1
 			}
-	 }
+		}
 		return -1
 	}
 }

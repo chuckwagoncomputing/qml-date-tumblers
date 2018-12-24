@@ -11,7 +11,7 @@ Rectangle {
 
 	property int indicatorHeight: 2
 	property string indicatorColor: "#e91e63"
- property int year
+	property int year
 	property string textEntered: ""
 	property int startYear
 	property int endYear
@@ -45,15 +45,15 @@ Rectangle {
 		}
 		onCurrentIndexChanged: {
 			var y = parseInt(yearPickerTumbler.currentItem.text)
-		 if (yearPicker.year != y) {
+			if (yearPicker.year != y) {
 				yearPicker.year = y
 			}
 		}
 		function getYears(start, end) {
 			var y = [];
-   while (end >= start) {
-    y.push(end--)
-   }
+			while (end >= start) {
+				y.push(end--)
+			}
 			return y;
 		}
 	}
@@ -109,7 +109,7 @@ Rectangle {
 
 	// return Index of the first item that contains the given string.
 	function findIndex(t) {
-	 for (var i = yearPicker.startYear; i <= yearPicker.endYear; i++) {
+		for (var i = yearPicker.startYear; i <= yearPicker.endYear; i++) {
 			if (("" + i).includes(t)) {
 				return yearPicker.endYear - i
 			}

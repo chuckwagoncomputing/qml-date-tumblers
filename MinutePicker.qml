@@ -11,7 +11,7 @@ Rectangle {
 
 	property int indicatorHeight: 2
 	property string indicatorColor: "#e91e63"
- property int minute
+	property int minute
 	property int divisions: 5
 	property string textEntered
 
@@ -20,8 +20,8 @@ Rectangle {
 
 	activeFocusOnTab: true
 
- Tumbler {
-  id: minutePickerTumbler
+	Tumbler {
+		id: minutePickerTumbler
 		height: parent.width
 		width: parent.height - parent.indicatorHeight
 		activeFocusOnTab: false
@@ -30,25 +30,25 @@ Rectangle {
 			origin.x: minutePickerTumbler.width / 2
 			origin.y: minutePickerTumbler.width / 2
 		}
-  model: 60 / minutePicker.divisions
-  delegate: Text {
+		model: 60 / minutePicker.divisions
+		delegate: Text {
 			transform: Rotation {
 				angle: 90
 				origin.x: width / 2
 				origin.y: width / 2
 			}
-   anchors.right: parent.horizontalCenter
-   text: ("00" + (modelData * minutePicker.divisions)).slice(-2)
-   opacity: 0.4 + Math.max(0, 1 - Math.abs(Tumbler.displacement)) * 0.6
-   font.pixelSize: 15 + Math.max(0, 1 - Math.abs(Tumbler.displacement)) * 3
-  }
+			anchors.right: parent.horizontalCenter
+			text: ("00" + (modelData * minutePicker.divisions)).slice(-2)
+			opacity: 0.4 + Math.max(0, 1 - Math.abs(Tumbler.displacement)) * 0.6
+			font.pixelSize: 15 + Math.max(0, 1 - Math.abs(Tumbler.displacement)) * 3
+		}
 		onCurrentIndexChanged: {
 			var m = minutePickerTumbler.currentIndex * minutePicker.divisions
-		 if (minutePicker.minute != m) {
+			if (minutePicker.minute != m) {
 				minutePicker.minute = m
 			}
 		}
- }
+	}
 
 	Rectangle	{
 		id: minutePickerIndicator
@@ -94,7 +94,7 @@ Rectangle {
 		else if (minutePicker.textEntered.length > t.length) {
 			minutePicker.textEntered = ""
 			return searchIndex(t)
-  }
+		}
 	}
 
 	// return Index of the first item that contains the given string.

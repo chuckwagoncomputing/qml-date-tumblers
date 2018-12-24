@@ -11,7 +11,7 @@ Rectangle {
 
 	property int indicatorHeight: 2
 	property string indicatorColor: "#e91e63"
- property int day
+	property int day
 	property string textEntered
 	property int daysInMonth
 
@@ -44,7 +44,7 @@ Rectangle {
 		}
 		onCurrentIndexChanged: {
 			var d = dayPickerTumbler.currentIndex + 1
-		 if (dayPicker.day != d) {
+			if (dayPicker.day != d) {
 				dayPicker.day = d
 			}
 		}
@@ -98,7 +98,7 @@ Rectangle {
 		else if (dayPicker.textEntered.length > t.length) {
 			dayPicker.textEntered = ""
 			return searchIndex(t)
-  }
+		}
 	}
 
 	// return Index of the first item that contains the given string.
