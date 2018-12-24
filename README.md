@@ -34,7 +34,7 @@ hour - The currently selected hour. This can be set externally.
 ### MinutePicker
 #### Properties
 minute - The currently selected minute. This can be set externally.
-
+divisions - How many options to divide the hour into. Should be a factor of 60, e.g. 1, 2, 5, 6, 10...
 
 ## Example
 ```qml
