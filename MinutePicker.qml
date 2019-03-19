@@ -90,13 +90,14 @@ Rectangle {
 	// Search for Index. If nothing is found, starts over with the last entered key
 	function searchIndex(t) {
 	 minutePicker.textEntered += t
-		for (var i = 0; i < minutePicker.textEntered.length; i++) {
-			var foundIndex = findIndex(minutePicker.textEntered.slice(0 - i))
+			var foundIndex = findIndex(minutePicker.textEntered)
 			if (foundIndex > -1) {
-				continue
-			else
-				return findIndex(minutePicker.textEntered.slice(0 - i + 1))
+				return foundIndex
 			}
+			// If more than one key has been entered, take just the last one and try again
+			else if (minutePicker.textEntered.length > t.length) {
+				minutePicker.textEntered = ""
+				return searchIndex(t)
 		}
 	}
 
