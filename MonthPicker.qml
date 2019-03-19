@@ -19,6 +19,10 @@ Rectangle {
 
 	activeFocusOnTab: true
 
+	onActiveFocusChanged: {
+		textEntered = ""
+	}
+
 	ListModel {
 		id: monthModel
 		ListElement {

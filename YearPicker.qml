@@ -21,6 +21,10 @@ Rectangle {
 
 	activeFocusOnTab: true
 
+	onActiveFocusChanged: {
+		textEntered = ""
+	}
+
 	Tumbler {
 		id: yearPickerTumbler
 		height: parent.width

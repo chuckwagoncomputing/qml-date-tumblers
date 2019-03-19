@@ -20,6 +20,10 @@ Rectangle {
 
 	activeFocusOnTab: true
 
+	onActiveFocusChanged: {
+		textEntered = ""
+	}
+
 	Tumbler {
 		id: dayPickerTumbler
 		height: parent.width
