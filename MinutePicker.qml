@@ -60,7 +60,7 @@ Rectangle {
 	}
 
 	onMinuteChanged: {
-		var m = minutePicker.minute / minutePicker.division
+		var m = minutePicker.minute / minutePicker.divisions
 		if (minutePickerTumbler.currentIndex != m) {
 			minutePickerTumbler.currentIndex = m
 		}
