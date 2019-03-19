@@ -19,6 +19,10 @@ Rectangle {
 
 	activeFocusOnTab: true
 
+	onActiveFocusChanged: {
+		textEntered = ""
+	}
+
 	Tumbler {
 		id: hourPickerTumbler
 		height: parent.width
