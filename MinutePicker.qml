@@ -22,13 +22,35 @@ Rectangle {
 
 	onActiveFocusChanged: {
 		textEntered = ""
+		if (minutePicker.activeFocus) {
+			Qt.inputMethod.show()
+		}
 	}
+
+	MouseArea {
+		id: clickarea
+		z: 1
+		propagateComposedEvents: true
+		anchors.fill: parent
+		onPressed: {
+			if (! minutePicker.activeFocus) {
+				minutePicker.forceActiveFocus()
+			}
+			mouse.accepted = false
+		}
+		onClicked: mouse.accepted = false;
+		onReleased: mouse.accepted = false;
+		onDoubleClicked: mouse.accepted = false;
+		onPositionChanged: mouse.accepted = false;
+		onPressAndHold: mouse.accepted = false;
+ }
 
 	Tumbler {
 		id: minutePickerTumbler
 		height: parent.width
 		width: parent.height - parent.indicatorHeight
 		activeFocusOnTab: false
+		z: 0
 		transform: Rotation {
 			angle: -90
 			origin.x: minutePickerTumbler.width / 2

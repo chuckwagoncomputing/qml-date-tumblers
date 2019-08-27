@@ -22,13 +22,35 @@ Rectangle {
 
 	onActiveFocusChanged: {
 		textEntered = ""
+		if (dayPicker.activeFocus) {
+			Qt.inputMethod.show()
+		}
 	}
+
+	MouseArea {
+		id: clickarea
+		z: 1
+		propagateComposedEvents: true
+		anchors.fill: parent
+		onPressed: {
+			if (! dayPicker.activeFocus) {
+				dayPicker.forceActiveFocus()
+			}
+			mouse.accepted = false
+		}
+		onClicked: mouse.accepted = false;
+		onReleased: mouse.accepted = false;
+		onDoubleClicked: mouse.accepted = false;
+		onPositionChanged: mouse.accepted = false;
+		onPressAndHold: mouse.accepted = false;
+ }
 
 	Tumbler {
 		id: dayPickerTumbler
 		height: parent.width
 		width: parent.height - parent.indicatorHeight
 		activeFocusOnTab: false
+		z: 0
 		transform: Rotation {
 			angle: -90
 			origin.x: dayPickerTumbler.width / 2
